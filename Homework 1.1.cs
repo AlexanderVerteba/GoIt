@@ -33,6 +33,8 @@ namespace GoIt_homework_1._1
             Console.WriteLine("Type decimal: default value {0}, min {1}, max {2};", default(decimal), decimal.MinValue, decimal.MaxValue);
 
             Console.WriteLine("Type bool: default value {0};", default(bool));
+            
+            Console.WriteLine("Type char: default value {0};", default(char));
 
             Console.ReadKey();
         }
