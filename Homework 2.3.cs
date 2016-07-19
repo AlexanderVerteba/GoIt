@@ -10,7 +10,9 @@ namespace homework2_3
     {
         static void Main(string[] args)
         {
-            Int32 x = 5, y = 12, z = 2;
+            Int32 x = 5;
+            Int32 y = 12;
+            Int32 z = 2;
             Int32 _iResult = (x++ - --y + --x << z++) * (x + y + z);
             /* 
              * 5(x=6) - 11(y=11) + 5(x=5)=-1
