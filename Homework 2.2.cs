@@ -10,33 +10,36 @@ namespace GoIt_homework_1._1
     {
         static void Main(string[] args)
         {
-            int r, a, b, c;
-            
+            Int32 _iRadius;
+            Int32 _iA;
+            Int32 _iB;
+            Int32 _iC;
+
             Console.WriteLine("Circle:");
             Console.Write("Radius = ");
-            r = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("S = {0}\n", Math.Pow(r,2) * Math.PI);
+            _iRadius = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("S = {0}\n", Math.Pow(_iRadius, 2) * Math.PI);
 
             Console.WriteLine("Sphere:");
             Console.Write("Radius = ");
-            r = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("V = {0}", 4 / 3 * Math.Pow(r,3) * Math.PI);
+            _iRadius = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("V = {0}", 4 / 3 * Math.Pow(_iRadius, 3) * Math.PI);
 
             Console.WriteLine("\nRectangle:");
             Console.Write("Length = ");
-            a = Convert.ToInt32(Console.ReadLine());
+            _iA = Convert.ToInt32(Console.ReadLine());
             Console.Write("Width = ");
-            b = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("S = {0}", a * b);
+            _iB = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("S = {0}", _iA * _iB);
 
             Console.WriteLine("\nCuboid:");
             Console.Write("Length = ");
-            a = Convert.ToInt32(Console.ReadLine());
+            _iA = Convert.ToInt32(Console.ReadLine());
             Console.Write("Width = ");
-            b = Convert.ToInt32(Console.ReadLine());
+            _iB = Convert.ToInt32(Console.ReadLine());
             Console.Write("Height = ");
-            c = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("V = {0}", a * b * c);
+            _iC = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("V = {0}", _iA * _iB * _iC);
 
             Console.ReadKey();
         }
