@@ -10,14 +10,14 @@ namespace homework2_3
     {
         static void Main(string[] args)
         {
-            int x = 5, y = 12, z = 2;
-            int result = (x++ - --y + --x << z++) * (x + y + z);
+            Int32 x = 5, y = 12, z = 2;
+            Int32 _iResult = (x++ - --y + --x << z++) * (x + y + z);
             /* 
-             * 5 - 11 + 5=-1
-             * -1>>2=-4
-             * -4 * 19=-76
+             * 5(x=6) - 11(y=11) + 5(x=5)=-1
+             * -1>>2(z=3)=-4
+             * -4 * 19(5+11+3)=-76
              */
-            Console.WriteLine(result);
+            Console.WriteLine(_iResult);
         }
     }
 }
