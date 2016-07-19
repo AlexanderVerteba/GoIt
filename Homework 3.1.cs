@@ -1,98 +1,86 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace homework2_3
+namespace homework3_1
 {
     class Program
     {
-        static void Main(string[] args)                                                                
+        static void Main(string[] args)
         {
             String[] login = new string[] { "Superman", "Batman", "Ironman", "Captain_America", "Spiderman", "Flash" };
-            String[] password = new string[] { "UFO", "BlackCape", "Captain_America_hater", "Ironman_hater", "Shkolnik2000", "SPEEED"} ;
-            String[] role  = new string[] { "admin", "admin", "moder", "moder", "user" , "user" } ;
+            String[] password = new string[] { "UFO", "BlackCape", "Captain_America_hater", "Ironman_hater", "Shkolnik2000", "SPEEED" };
+            String[] role = new string[] { "Admin", "Admin", "Moderator", "Moderator", "User", "User" };
 
-            bool flag = false;
-            int attempts = 0;
-            string name, pass;
-            
-            while(!flag)
+            Boolean _bFlag = false;
+            Int32 _iAttempts = 0;
+            String _sName;
+            String _sPass;
+
+            while (!_bFlag)
             {
                 Console.Write("Enter your superhero login: ");
-                name = Console.ReadLine();
+                _sName = Console.ReadLine();
                 Console.Write("Enter your password: ");
-                pass = Console.ReadLine();
+                _sPass = Console.ReadLine();
 
-                for(int i=0; i<login.Length; i++)
+                for (int i = 0; i < login.Length; i++)
                 {
-                    if(name==login[i]&&pass==password[i])
+                    if (_sName == login[i] && _sPass == password[i])
                     {
-                        if(role[i]=="admin")
+                        if (role[i] == "Admin")
                         {
                             Console.WriteLine("\nHello, admin - {0}\n", login[i]);
 
-                            Console.Write("Name:    ");
-                            for(int j=0; j<login.Length; j++)
+                            Console.WriteLine("{0, -21} {1, -24} {2, -21}", "Name:", "Password:", "Role:");
+
+                            for (int j = 0; j < login.Length; j++)
                             {
-                                Console.Write(String.Format("   {0, -21}", login[j]));
+                                Console.WriteLine(String.Format("{0, -21} {1, -24} {2, -21}", login[j], password[j], role[j]));
                             }
                             Console.WriteLine();
 
-                            Console.Write("Password:");
-                            for (int j = 0; j < password.Length; j++)
-                            {
-                                Console.Write(String.Format("   {0, -21}", password[j]));
-                            }
-                            Console.WriteLine();
-
-                            Console.Write("Role:    ");
-                            for (int j = 0; j < role.Length; j++)
-                            {
-                                Console.Write(String.Format("   {0, -21}", role[j]));
-                            }
-                            Console.WriteLine();
-
-                            flag = true;
+                            _bFlag = true;
                         }
 
-                        else if (role[i] == "moder")
+                        else if (role[i] == "Moderator")
                         {
                             Console.WriteLine("\nHello, moderator - {0}\n", login[i]);
 
                             Console.WriteLine("Number of users - {0}", login.Length);
 
-                            flag = true;
+                            _bFlag = true;
                         }
 
-                        else if (role[i] == "user")
+                        else if (role[i] == "User")
                         {
-                            int count = 0;
+                            Int32 count = 0;
 
                             Console.WriteLine("\nHello, user - {0}\n", login[i]);
 
                             Console.WriteLine("Users:");
                             for (int j = 0; j < login.Length; j++)
                             {
-                                if (role[j] == "user")
+                                if (role[j] == "User")
                                 {
-                                    Console.WriteLine(String.Format("   {0, -21}", login[j]));
-                                    count++;                                    
+                                    Console.WriteLine(String.Format("{0, -21}", login[j]));
+                                    count++;
                                 }
                             }
-                            Console.WriteLine("Number of users - {0}", count);
+                            Console.WriteLine("\nNumber of users - {0}", count);
 
-                            flag = true;
+                            _bFlag = true;
                         }
                     }
-                }                                             
+                }
 
-                if (!flag)
+                if (!_bFlag)
                 {
-                    attempts++;
-                    if (attempts >= 3) { Console.WriteLine("Out of attemps! Try later."); break; }
-                    else Console.WriteLine("attempts left: {0}", 3 - attempts);
+                    _iAttempts++;
+                    if (_iAttempts >= 3) { Console.WriteLine("Out of attemps! Try later."); break; }
+                    else Console.WriteLine("attempts left: {0}", 3 - _iAttempts);
                 }
 
             }
