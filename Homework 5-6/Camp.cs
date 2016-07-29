@@ -10,7 +10,7 @@ namespace Homework_5_6
     {
         static List<Scout> scouts = new List<Scout>();
 
-        static public void Inz()
+        static Camp()
         {
             scouts.Add(new Boy { _sName = "Superman", _iGender = 1 });
             scouts.Add(new Boy { _sName = "Batman", _iGender = 1 });
