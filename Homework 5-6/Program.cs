@@ -10,8 +10,6 @@ namespace Homework_5_6
     {
         static void Main(string[] args)
         {
-            
-            Camp.Inz();
             while(Menu())
             {
                 Console.ReadKey();
