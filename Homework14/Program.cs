@@ -46,24 +46,19 @@ namespace Homework14
         static void Pagination(Repository products)
         {
             var query = from beverages in products.items
-                        select beverages;
+                        select new{beverages.Name, beverages.Price };
             int page=0;
-            System.ConsoleKeyInfo key;
-            while (true)
+
+            int length = (query.Count() + 1) / 2;
+            Console.WriteLine("Select page from {0} to {1}", 1, length);
+            int input;
+            int.TryParse(Console.ReadLine(), out input);
+            var pag = query.Skip((input - 1) * 2).Take(2);
+            foreach (var item in pag)
             {
-                Console.WriteLine(new string('-', 20));
-                foreach (var item in query)
-                {
-                    if(item.Id==page*2 || item.Id == page * 2+1) Console.WriteLine("{0} {1}", item.Name, item.Price);
-                }
-                Console.WriteLine(new string('-', 20));
-                Console.WriteLine("Press arrows to change page or enter to return");
-                key = Console.ReadKey();
-                if (key.Key == ConsoleKey.LeftArrow) page = page == 0 ? page : --page;
-                if (key.Key == ConsoleKey.RightArrow) page = page+1 == query.Count()/2 ? page : ++page;
-                if(key.Key == ConsoleKey.Enter) break;
-                Console.Clear();
+                Console.WriteLine("{0} {1}", item.Name, item.Price);
             }
+            Console.ReadLine();
         }
 
         static void ByKey(Repository products)
